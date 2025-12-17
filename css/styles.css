@@ -69,11 +69,12 @@ body {
   gap: 20px;
   flex-wrap: wrap;
   align-items: center;
+  text-align: justify;
 }
-
+ 
 .perfil {
-  width: 130px;
-  height: 130px;
+  width: 230px;
+  height: 230px;
   border-radius: 10px;
   object-fit: cover;
   box-shadow: 0 0 10px #00eaff;
@@ -217,4 +218,136 @@ footer {
 .fade.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ================================
+   RESPONSIVIDADE
+================================ */
+
+/* ===== Tablets (até 1024px) ===== */
+@media (max-width: 1024px) {
+  .hero {
+    height: 50vh;
+  }
+
+  .hero-content .title {
+    font-size: 2.3rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .card {
+    margin: 16px;
+    padding: 22px;
+  }
+
+  .perfil {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* ===== Tablets / Mobile grandes (até 768px) ===== */
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    padding: 60px 20px;
+  }
+
+  .hero-content .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-btn {
+    padding: 10px 22px;
+    font-size: 0.95rem;
+  }
+
+  /* SOBRE MIM */
+  .about-flex {
+    flex-direction: column;
+    text-align: justify;
+  }
+
+  .perfil {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 15px;
+  }
+
+  /* TIMELINE */
+  .timeline {
+    padding-left: 15px;
+  }
+
+  .timeline-item h3 {
+    font-size: 1.1rem;
+  }
+
+  /* TAGS */
+  .tags span {
+    padding: 6px 14px;
+    font-size: 0.9rem;
+  }
+
+  /* CONTATOS */
+  .contato-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn {
+    font-size: 0.95rem;
+  }
+}
+
+/* ===== Mobile (até 480px) ===== */
+@media (max-width: 480px) {
+  body {
+    font-size: 0.95rem;
+  }
+
+  .hero-content .title {
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .hero-btn {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .card {
+    margin: 12px;
+    padding: 18px;
+  }
+
+  .perfil {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* IDIOMAS */
+  .idioma-neon {
+    font-size: 1rem;
+    padding: 14px;
+  }
+
+  /* GALERIA */
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    font-size: 0.8rem;
+    padding: 15px 10px;
+  }
 }
