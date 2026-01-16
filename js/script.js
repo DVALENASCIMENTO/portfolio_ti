@@ -69,4 +69,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  /* === SLIDE AUTOMÁTICO DE DEPOIMENTOS === */
+const depoimentos = document.querySelectorAll(".depoimento");
+let slideIndex = 0;
+
+function trocarDepoimento() {
+  depoimentos.forEach(d => d.classList.remove("active"));
+  slideIndex = (slideIndex + 1) % depoimentos.length;
+  depoimentos[slideIndex].classList.add("active");
+}
+
+if (depoimentos.length > 1) {
+  setInterval(trocarDepoimento, 5000); // 5 segundos
+}
+
+
 });
