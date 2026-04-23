@@ -85,3 +85,30 @@ if (depoimentos.length > 1) {
 
 
 });
+
+
+const mainImage = document.getElementById("currentImage");
+const caption = document.getElementById("caption");
+const thumbnails = document.querySelectorAll(".thumbnails img");
+
+let index = 0;
+
+// Clique nas miniaturas
+thumbnails.forEach((thumb, i) => {
+  thumb.addEventListener("click", () => {
+    mainImage.src = thumb.src;
+    caption.textContent = thumb.dataset.caption;
+    index = i;
+  });
+});
+
+// AUTO PLAY
+function autoSlide() {
+  index++;
+  if (index >= thumbnails.length) index = 0;
+
+  mainImage.src = thumbnails[index].src;
+  caption.textContent = thumbnails[index].dataset.caption;
+}
+
+setInterval(autoSlide, 4000);
